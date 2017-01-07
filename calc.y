@@ -7,13 +7,6 @@ yyerror(const char *s)
     fputs(s, stderr);
     fputs("\n",stderr);
 }
-
-static int
-yywrap(void)
-{
-    return 1;
-}
-
 %}
 %union
 {
@@ -38,7 +31,6 @@ expr : NUM
     ;
 %%
 
-#include "lex.yy.c"
 int
 main()
 {
