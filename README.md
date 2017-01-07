@@ -14,3 +14,7 @@
 
 1+
 =>syntax error
+
+1a2
+
+=>lexical error.
