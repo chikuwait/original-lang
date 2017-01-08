@@ -17,7 +17,6 @@ yywrap(void)
 "%"     return MOD;
 "\n"    return NL;
 
-
 ([1-9][0-9]*)|0|([0-9]+\.[0-9]*) {
     double temp;
     sscanf(yytext,"%lf",&temp);
