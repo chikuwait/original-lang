@@ -51,7 +51,8 @@ extern int yydebug;
     MUL = 261,
     DIV = 262,
     MOD = 263,
-    NL = 264
+    NL = 264,
+    EXT = 265
   };
 #endif
 
@@ -64,7 +65,7 @@ union YYSTYPE
 
     double double_value;
 
-#line 68 "calc.tab.h" /* yacc.c:1909  */
+#line 69 "calc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

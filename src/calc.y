@@ -14,11 +14,11 @@ yyerror(const char *s)
 }
 %type <double_value> expr
 %token <double_value> NUM
-%token ADD SUB MUL DIV MOD NL
+%token ADD SUB MUL DIV MOD NL EXT
 
 %%
-
 program : statement
+        | EXIT
         | program statement
         ;
 statement : expr NL
@@ -26,6 +26,10 @@ statement : expr NL
             fprintf(stdout,"%g\n",$1);
            }
           ;
+EXIT:
+{
+    return 0;
+}
 expr : NUM
      | expr ADD NUM
         {
@@ -42,10 +46,6 @@ expr : NUM
      | expr DIV NUM
         {
             $$=$1/$3;
-        }
-     | expr MOD NUM
-        {
-            $$=$1+$3;
         }
     ;
 %%

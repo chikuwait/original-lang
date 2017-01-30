@@ -24,6 +24,9 @@ yywrap(void)
     return NUM;
 };
 [ \t];
+("quit"|"exit") {
+    return EXT;
+}
 . {
     fprintf(stderr,"lexical error.\n");
     exit(1);
