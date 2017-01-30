@@ -1258,7 +1258,7 @@ yyreduce:
   case 10:
 #line 47 "calc.y" /* yacc.c:1646  */
     {
-            (yyval.double_value)=(yyvsp[-2].double_value)-(yyvsp[0].double_value);
+            (yyval.double_value)=(yyvsp[-2].double_value)+(yyvsp[0].double_value);
         }
 #line 1264 "calc.tab.c" /* yacc.c:1646  */
     break;

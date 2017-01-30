@@ -1,0 +1,15 @@
+task :default  => [:flex, :bison, :gcc]
+task :flex do
+  Dir.chdir("src") do
+    sh "flex calc.l"
+  end
+end
+task :bison do
+  Dir.chdir("src") do
+    sh "bison -d calc.y"
+  end
+end
+task :gcc do
+  sh "gcc -o lang src/calc.tab.c src/lex.yy.c -lm"
+end
+
