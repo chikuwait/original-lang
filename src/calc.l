@@ -14,6 +14,7 @@ yywrap(void)
 "-"     return SUB;
 "/"     return DIV;
 "*"     return MUL;
+"%"     return MOD;
 "\n"    return NL;
 
 ([1-9][0-9]*)|0|([0-9]+\.[0-9]*) {
