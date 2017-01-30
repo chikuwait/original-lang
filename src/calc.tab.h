@@ -50,7 +50,8 @@ extern int yydebug;
     SUB = 260,
     MUL = 261,
     DIV = 262,
-    NL = 263
+    MOD = 263,
+    NL = 264
   };
 #endif
 
@@ -59,11 +60,11 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 12 "src/calc.y" /* yacc.c:1909  */
+#line 12 "calc.y" /* yacc.c:1909  */
 
     double double_value;
 
-#line 67 "calc.tab.h" /* yacc.c:1909  */
+#line 68 "calc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

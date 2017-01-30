@@ -14,7 +14,7 @@ yyerror(const char *s)
 }
 %type <double_value> expr
 %token <double_value> NUM
-%token ADD SUB MUL DIV NL
+%token ADD SUB MUL DIV MOD NL
 
 %%
 
@@ -42,6 +42,10 @@ expr : NUM
      | expr DIV NUM
         {
             $$=$1/$3;
+        }
+     | expr MOD NUM
+        {
+            $$=$1-$3;
         }
     ;
 %%
