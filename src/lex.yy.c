@@ -814,7 +814,7 @@ case 9:
 YY_RULE_SETUP
 #line 27 "calc.l"
 {
-    return EXT;
+    return EXIT;
 }
 	YY_BREAK
 case 10:

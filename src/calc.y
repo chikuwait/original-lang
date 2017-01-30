@@ -14,11 +14,18 @@ yyerror(const char *s)
 }
 %type <double_value> expr
 %token <double_value> NUM
-%token ADD SUB MUL DIV MOD NL EXT
+%token ADD SUB MUL DIV MOD NL EXIT
 
 %%
 program : statement
         | EXIT
+        {
+            return 0;
+        }
+        | program EXIT
+        {
+            return 0;
+        }
         | program statement
         ;
 statement : expr NL
@@ -26,10 +33,6 @@ statement : expr NL
             fprintf(stdout,"%g\n",$1);
            }
           ;
-EXIT:
-{
-    return 0;
-}
 expr : NUM
      | expr ADD NUM
         {

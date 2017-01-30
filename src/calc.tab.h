@@ -52,7 +52,7 @@ extern int yydebug;
     DIV = 262,
     MOD = 263,
     NL = 264,
-    EXT = 265
+    EXIT = 265
   };
 #endif
 
