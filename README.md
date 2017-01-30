@@ -1,20 +1,10 @@
 # original-lang
-#Feature
-1+1
-=>OK
+## How to use
+This program use flex(lex) and bison(yacc) . If you change this program, use flex and bison. Then, This program is using "rake" gem of Ruby to make build easy. If you use "rakefile", Please install Ruby and rake gem. 
 
-1-1
-=>OK
 
-10*10
-=>OK
-
-30/2
-=>OK
-
-1+
-=>syntax error
-
-1a2
-
-=>lexical error.
+	git https://github.com/chikuwait/original-lang.git
+	cd  original-lang
+	rake
+	./lang
+## Feature
