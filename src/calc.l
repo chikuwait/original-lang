@@ -16,6 +16,8 @@ yywrap(void)
 "*"     return MUL;
 "%"     return MOD;
 "\n"    return NL;
+"("     return LP;
+")"     return RP;
 
 ([1-9][0-9]*)|0|([0-9]+\.[0-9]*) {
     double temp;

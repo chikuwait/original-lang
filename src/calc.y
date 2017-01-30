@@ -14,7 +14,7 @@ yyerror(const char *s)
 }
 %type <double_value> expr
 %token <double_value> NUM
-%token ADD SUB MUL DIV MOD NL EXIT
+%token ADD SUB MUL DIV MOD NL EXIT LP RP
 
 %%
 program : statement
@@ -34,6 +34,10 @@ statement : expr NL
            }
           ;
 expr : NUM
+     | LP expr RP
+     {
+        $$=$2;
+     }
      | expr ADD NUM
         {
             $$=$1+$3;
