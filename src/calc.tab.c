@@ -73,7 +73,7 @@ yyerror(const char *s)
     fputs("\n",stderr);
 }
 
-#line 77 "y.tab.c" /* yacc.c:339  */
+#line 77 "calc.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -91,7 +91,10 @@ yyerror(const char *s)
 # define YYERROR_VERBOSE 0
 #endif
 
-
+/* In a future release of Bison, this section will be replaced
+   by #include "calc.tab.h".  */
+#ifndef YY_YY_CALC_TAB_H_INCLUDED
+# define YY_YY_CALC_TAB_H_INCLUDED
 /* Debug traces.  */
 #ifndef YYDEBUG
 # define YYDEBUG 0
@@ -113,13 +116,6 @@ extern int yydebug;
     NL = 263
   };
 #endif
-/* Tokens.  */
-#define NUM 258
-#define ADD 259
-#define SUB 260
-#define MUL 261
-#define DIV 262
-#define NL 263
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
@@ -130,7 +126,7 @@ union YYSTYPE
 
     double double_value;
 
-#line 134 "y.tab.c" /* yacc.c:355  */
+#line 130 "calc.tab.c" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -143,11 +139,11 @@ extern YYSTYPE yylval;
 
 int yyparse (void);
 
-
+#endif /* !YY_YY_CALC_TAB_H_INCLUDED  */
 
 /* Copy the second part of user declarations.  */
 
-#line 151 "y.tab.c" /* yacc.c:358  */
+#line 147 "calc.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -1220,7 +1216,7 @@ yyreduce:
     {
             fprintf(stdout,"%g\n",(yyvsp[-1].double_value));
            }
-#line 1224 "y.tab.c" /* yacc.c:1646  */
+#line 1220 "calc.tab.c" /* yacc.c:1646  */
     break;
 
   case 6:
@@ -1228,7 +1224,7 @@ yyreduce:
     {
             (yyval.double_value)=(yyvsp[-2].double_value)+(yyvsp[0].double_value);
         }
-#line 1232 "y.tab.c" /* yacc.c:1646  */
+#line 1228 "calc.tab.c" /* yacc.c:1646  */
     break;
 
   case 7:
@@ -1236,7 +1232,7 @@ yyreduce:
     {
             (yyval.double_value)=(yyvsp[-2].double_value)-(yyvsp[0].double_value);
         }
-#line 1240 "y.tab.c" /* yacc.c:1646  */
+#line 1236 "calc.tab.c" /* yacc.c:1646  */
     break;
 
   case 8:
@@ -1244,7 +1240,7 @@ yyreduce:
     {
             (yyval.double_value)=(yyvsp[-2].double_value)*(yyvsp[0].double_value);
         }
-#line 1248 "y.tab.c" /* yacc.c:1646  */
+#line 1244 "calc.tab.c" /* yacc.c:1646  */
     break;
 
   case 9:
@@ -1252,11 +1248,11 @@ yyreduce:
     {
             (yyval.double_value)=(yyvsp[-2].double_value)/(yyvsp[0].double_value);
         }
-#line 1256 "y.tab.c" /* yacc.c:1646  */
+#line 1252 "calc.tab.c" /* yacc.c:1646  */
     break;
 
 
-#line 1260 "y.tab.c" /* yacc.c:1646  */
+#line 1256 "calc.tab.c" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires

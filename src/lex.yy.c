@@ -472,8 +472,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "calc.l"
-#line 2 "calc.l"
+#line 1 "src/calc.l"
+#line 2 "src/calc.l"
 #include <stdio.h>
 #include "y.tab.h"
 
@@ -700,7 +700,7 @@ YY_DECL
 		}
 
 	{
-#line 12 "calc.l"
+#line 12 "src/calc.l"
 
 #line 706 "lex.yy.c"
 
@@ -761,33 +761,33 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 13 "calc.l"
+#line 13 "src/calc.l"
 return ADD;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "calc.l"
+#line 14 "src/calc.l"
 return SUB;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 15 "calc.l"
+#line 15 "src/calc.l"
 return DIV;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 16 "calc.l"
+#line 16 "src/calc.l"
 return MUL;
 	YY_BREAK
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 17 "calc.l"
+#line 17 "src/calc.l"
 return NL;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 19 "calc.l"
+#line 19 "src/calc.l"
 {
     double temp;
     sscanf(yytext,"%lf",&temp);
@@ -797,12 +797,12 @@ YY_RULE_SETUP
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 25 "calc.l"
+#line 25 "src/calc.l"
 
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 26 "calc.l"
+#line 26 "src/calc.l"
 {
     fprintf(stderr,"lexical error.\n");
     exit(1);
@@ -810,7 +810,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 30 "calc.l"
+#line 30 "src/calc.l"
 ECHO;
 	YY_BREAK
 #line 817 "lex.yy.c"
@@ -1814,7 +1814,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 30 "calc.l"
+#line 30 "src/calc.l"
 
 
 
