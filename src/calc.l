@@ -15,6 +15,7 @@ yywrap(void)
 "/"     return DIV;
 "*"     return MUL;
 "%"     return MOD;
+"^"     return POW;
 "\n"    return NL;
 "("     return LP;
 ")"     return RP;

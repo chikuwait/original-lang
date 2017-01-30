@@ -1,5 +1,6 @@
 %{
 #include <stdio.h>
+#include <math.h>
 int yylex();
 static void
 yyerror(const char *s)
@@ -14,7 +15,7 @@ yyerror(const char *s)
 }
 %type <double_value> expr
 %token <double_value> NUM
-%token ADD SUB MUL DIV MOD NL EXIT LP RP
+%token ADD SUB MUL DIV MOD POW NL EXIT LP RP
 
 %%
 program : statement
@@ -53,6 +54,10 @@ expr : NUM
      | expr DIV NUM
         {
             $$=$1/$3;
+        }
+    | expr POW NUM
+        {
+            $$=pow($1,$3);
         }
     ;
 %%
