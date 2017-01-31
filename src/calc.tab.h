@@ -57,7 +57,8 @@ extern int yydebug;
     EXIT = 267,
     LP = 268,
     RP = 269,
-    EQ = 270
+    EQ = 270,
+    PR = 271
   };
 #endif
 
@@ -71,7 +72,7 @@ union YYSTYPE
     double double_value;
     char cval;
 
-#line 75 "calc.tab.h" /* yacc.c:1909  */
+#line 76 "calc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

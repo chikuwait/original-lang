@@ -20,7 +20,7 @@ WORD    [a-zA-Z]
 "("     return LP;
 ")"     return RP;
 "="     return EQ;
-
+"puts " return PR;
 {WORD} {
     yylval.cval=yytext[0];
     return  IDENTIFIER;

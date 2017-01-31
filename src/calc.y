@@ -2,14 +2,14 @@
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
-#define IDENTIFIER_SIZE 32
+#define IDENTIFIER_SIZE 16
 
 typedef struct _identifier
 {
-    char name;
+    char  name;
     double value;
 } identifier;
-identifier imap[IDENTIFIER_SIZE];
+identifier imap[IDENTIFIER_SIZE]={'\0',0};
 //int identifier_register(char name, int value)
 int index_identifier(char name);
 int identifier_register(char name,double value);
@@ -30,7 +30,7 @@ yyerror(const char *s)
 %type <double_value> expr facter
 %token <cval> IDENTIFIER
 %token <double_value> NUM
-%token ADD SUB MUL DIV MOD POW NL EXIT LP RP EQ
+%token ADD SUB MUL DIV MOD POW NL EXIT LP RP EQ PR
 %left ADD SUB
 %left MUL DIV
 %right POW
@@ -44,10 +44,14 @@ program : statement
         ;
 statement : expr NL
            {
-            fprintf(stdout,"%g\n",$1);
+           // fprintf(stdout,"=>%g\n",$3);
            }
           ;
 expr : facter
+     | PR expr
+        {
+            fprintf(stdout,"%g\n",$2);
+        }
      | EXIT
         {
             return 0;
