@@ -8,7 +8,7 @@ yywrap(void)
     return 1;
 }
 %}
-
+WORD    [a-zA-Z]
 %%
 "+"     return ADD;
 "-"     return SUB;
@@ -19,7 +19,12 @@ yywrap(void)
 "\n"    return NL;
 "("     return LP;
 ")"     return RP;
+"="     return EQ;
 
+{WORD} {
+    yylval.cval=yytext[0];
+    return  IDENTIFIER;
+}
 ([1-9][0-9]*)|0|([0-9]+\.[0-9]*) {
     double temp;
     sscanf(yytext,"%lf",&temp);

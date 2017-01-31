@@ -45,17 +45,19 @@ extern int yydebug;
 # define YYTOKENTYPE
   enum yytokentype
   {
-    NUM = 258,
-    ADD = 259,
-    SUB = 260,
-    MUL = 261,
-    DIV = 262,
-    MOD = 263,
-    POW = 264,
-    NL = 265,
-    EXIT = 266,
-    LP = 267,
-    RP = 268
+    IDENTIFIER = 258,
+    NUM = 259,
+    ADD = 260,
+    SUB = 261,
+    MUL = 262,
+    DIV = 263,
+    MOD = 264,
+    POW = 265,
+    NL = 266,
+    EXIT = 267,
+    LP = 268,
+    RP = 269,
+    EQ = 270
   };
 #endif
 
@@ -64,11 +66,12 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 13 "calc.y" /* yacc.c:1909  */
+#line 26 "calc.y" /* yacc.c:1909  */
 
     double double_value;
+    char cval;
 
-#line 72 "calc.tab.h" /* yacc.c:1909  */
+#line 75 "calc.tab.h" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;
