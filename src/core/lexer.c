@@ -7,7 +7,7 @@
 char *token[NMAX];
 int ix;
 
-void
+int
 lexer(char *text)
 {
     ix = 0;
@@ -47,18 +47,18 @@ lexer(char *text)
         token[ix][text-pBgn] = '\0';
         ix++;
     }
+    return ix;
 }
 int
 main(void)
 {
     char buf[128];
-
+    int pnt;
     fgets(buf,100,stdin);
-    lexer(buf);
-    for(int n = 0 ; n < ix ; n++)
-    {
-        printf("%s%s\n", token[n], (n<ix-1 ? " " : "\n"));
-        free(token[n]);
+    pnt = lexer(buf);
+    printf("%d\n",pnt);
+    for(int i =0 ; i < pnt ; i++){
+        free(token[i]);
     }
 }
 
